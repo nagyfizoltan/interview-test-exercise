@@ -1,4 +1,8 @@
 import React from 'react';
+import { inputStyle } from './styles/InputStyle';
+import { formStyle } from './styles/FormStyle';
+import { buttonStyle } from './styles/ButtonStyle';
+import { labelStyle } from './styles/LabelStyle';
 
 interface FormProps {
   onSubmit: (data: Props) => void;
@@ -28,35 +32,6 @@ function isEmailValid(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   return emailRegex.test(email);
 }
-
-const formStyle = {
-  fontFamily: 'Arial, sans-serif',
-  maxWidth: '400px',
-  margin: 'auto',
-};
-
-const labelStyle = {
-  display: 'block',
-  margin: '10px 0',
-};
-
-const inputStyle = {
-  width: '100%',
-  padding: '8px',
-  fontSize: '14px',
-  borderRadius: '4px',
-  border: '1px solid #ccc',
-  backgroundColor: '#FEEFCF',
-};
-
-const buttonStyle = {
-  backgroundColor: '#4CAF50',
-  color: 'white',
-  padding: '10px',
-  border: 'none',
-  borderRadius: '4px',
-  cursor: 'pointer',
-};
 
 export function ExampleForm({ onSubmit }: FormProps) {
   const [formData, setFormData] = React.useState<Props>({
